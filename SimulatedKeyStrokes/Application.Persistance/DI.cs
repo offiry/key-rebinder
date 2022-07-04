@@ -18,7 +18,8 @@ namespace Application.Persistance
         {
             builder.RegisterContext<ApplicationDbContext>();
 
-            builder.RegisterType<InitialSqlLiteDatabase>().As<IInitialSqlLiteDatabase>().SingleInstance();
+            //builder.RegisterType<InitialSqlLiteDatabase>().As<IInitialSqlLiteDatabase>().SingleInstance();
+            builder.RegisterAssemblyTypes(Assembly).As<IInitialSqlLiteDatabase>().SingleInstance();
 
             builder.RegisterType<GameKeysQueryRepository>().As<IGameKeysQueryRepository>().InstancePerLifetimeScope();
             builder.RegisterType<GameKeysRepository>().As<IGameKeysRepository>().InstancePerLifetimeScope();

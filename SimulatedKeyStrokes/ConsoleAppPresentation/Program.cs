@@ -18,8 +18,8 @@ namespace ConsoleAppPresentation
             IServiceCollection serviceCollection = new ServiceCollection();
             IServiceProvider serviceProvider = serviceCollection.RegisterAutofac();
             var mediatr = (IMediator)serviceProvider.GetService(typeof(IMediator));
-            var initialSqlLiteDatabase = (IInitialSqlLiteDatabase)serviceProvider.GetService(typeof(IInitialSqlLiteDatabase));
-            
+            var initialSqlLiteDatabase = (IInitialSqlLiteDatabase[])serviceProvider.GetServices(typeof(IInitialSqlLiteDatabase));
+
             await Task.Delay(5000);
 
 

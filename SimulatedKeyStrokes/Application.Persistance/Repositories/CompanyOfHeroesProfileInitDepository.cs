@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace Application.Persistance.Repositories
 {
-    public class InitialSqlLiteDatabase : IInitialSqlLiteDatabase
+    public class CompanyOfHeroesProfileInitDepository : IInitialSqlLiteDatabase
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public InitialSqlLiteDatabase(ApplicationDbContext applicationDbContext)
+        public CompanyOfHeroesProfileInitDepository(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
 
